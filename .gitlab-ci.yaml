@@ -3,11 +3,11 @@ stages:
   - deploy
 
 variables:
-  APPLICATION_NAME: "devesity-atlas-assessment"
+  APPLICATION_NAME: "assessment"
 
 .vars-development: &vars-development
   ENV: "development"
-  IMAGE_URL: account-id-development.dkr.ecr.ap-southeast-1.amazonaws.com/diversity-atlas-assessment:$CI_COMMIT_SHA
+  IMAGE_URL: account-id-development.dkr.ecr.ap-southeast-1.amazonaws.com/assessment:$CI_COMMIT_SHA
   ACCOUNT_REGION: "ap-southeast-1"
   AWS_PROFILE: "development-assumable-profile"
   ACCOUNT_ID: "123456789"
@@ -15,7 +15,7 @@ variables:
 
 .vars-production: &vars-production
   ENV: "production"
-  IMAGE_URL: account-id-production.dkr.ecr.ap-southeast-1.amazonaws.com/diversity-atlas-assessment:$CI_COMMIT_SHA
+  IMAGE_URL: account-id-production.dkr.ecr.ap-southeast-1.amazonaws.com/assessment:$CI_COMMIT_SHA
   ACCOUNT_REGION: "ap-southeast-1"
   AWS_PROFILE: "production-assumable-profile"
   ACCOUNT_ID: "987654321"
@@ -74,5 +74,3 @@ unit-test:
   image: gitlab-runner-image
   script: |
     run command to start unit tests
-  only:
-    - merge_requests

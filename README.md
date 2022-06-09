@@ -1,4 +1,4 @@
-# Diversity Atlas Assessment
+# Assessment CI/CD
 
 * Included in this repository:
   * Helm chart for application deployment
